@@ -3,14 +3,14 @@ export class Actor {
   firstName: string;
   lastName: string;
   gender: string;
-  birthDate: string;
+  birthDate: Date;
 
   constructor(
     id: number = 0,
     firstName: string = "",
     lastName: string = "",
     gender: string = "",
-    birthDate: string = ""
+    birthDate: Date = null
   ) {
     this.id = id;
     this.firstName = firstName;

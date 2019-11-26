@@ -1,17 +1,21 @@
 <h1>{{ title }}</h1>
-<table class="table table-sm">
-  <tr>
-    <th>ID</th>
-    <th>Movie</th>
-    <th>Actor</th>
-    <th>Role</th>
-    <th>Action</th>
-  </tr>
-  <tr *ngFor="let c of credits">
-    <td>{{ c.id }}</td>
-    <td>{{ c.movie.title }}</td>
-    <td>{{ c.actor.firstName }} {{ c.actor.lastName }}</td>
-    <td>{{ c.role }}</td>
-    <td>Detail | Edit</td>
-  </tr>
+<table class="table table-sm table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th><a (click)="sortBy('id')">ID</a></th>
+      <th>Movie</th>
+      <th>Actor</th>
+      <th><a (click)="sortBy('role')">Role</a></th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of credits | sort:sortCriteria:sortOrder">
+      <td>{{ c.id }}</td>
+      <td>{{ c.movie.title }}</td>
+      <td>{{ c.actor.firstName + " " + c.actor.lastName }}</td>
+      <td>{{ c.role }}</td>
+      <td>Detail | Edit</td>
+    </tr>
+  </tbody>
 </table>

@@ -11,6 +11,8 @@ import { MenuComponent } from './core/menu/menu.component';
 import { BaseComponent } from './feature/base/base.component';
 import { SortPipe } from './pipe/sort.pipe';
 import { MovieCreateComponent } from './feature/movie-create/movie-create.component';
+import { ActorCreateComponent } from './feature/actor-create/actor-create.component';
+import { MovieDetailComponent } from './feature/movie-detail/movie-detail.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MovieCreateComponent } from './feature/movie-create/movie-create.compon
     MenuComponent,
     BaseComponent,
     SortPipe,
-    MovieCreateComponent
+    MovieCreateComponent,
+    ActorCreateComponent,
+    MovieDetailComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule, AppRoutingModule],
   providers: [],

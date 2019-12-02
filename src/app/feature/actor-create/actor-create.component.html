@@ -1,0 +1,45 @@
+<div class="component-content">
+  <div class="lefthalf">
+    <span class="component-title">{{ title }} </span>
+  </div>
+</div>
+
+<p *ngIf="!actor">Loading...</p>
+
+<div *ngIf="actor">
+  <main class="single">
+    <table class="table table-sm">
+      <tr>
+        <th>First Name:</th>
+        <td>
+          <input [(ngModel)]="actor.firstName" type="text" class="rounded" />
+        </td>
+      </tr>
+      <tr>
+        <th>Last Name:</th>
+        <td>
+          <input [(ngModel)]="actor.lastName" type="text" class="rounded" />
+        </td>
+      </tr>
+      <tr>
+        <th>Gender:</th>
+        <td>
+          <input [(ngModel)]="actor.gender" type="text" class="rounded" />
+        </td>
+      </tr>
+      <tr>
+        <th>Birth Date:</th>
+        <td>
+          <input [(ngModel)]="actor.birthDate" type="date" class="rounded" />
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="save()" class="btn btn-sm btn-primary">
+            Save
+          </button>
+        </td>
+      </tr>
+    </table>
+  </main>
+</div>

@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Movie } from "src/app/model/movie.class";
 import { MovieService } from "src/app/service/movie.service";
 import { BaseComponent } from '../base/base.component';
+import { JsonResponse } from 'src/app/model/json-response.class';
 
 @Component({
   selector: "app-movie-list",
@@ -11,6 +12,7 @@ import { BaseComponent } from '../base/base.component';
 export class MovieListComponent extends BaseComponent implements OnInit {
   title: string = "Movie List";
   movies: Movie[] = [];
+  jr: JsonResponse;
   constructor(private movieSvc: MovieService) {
     super();
   }

@@ -13,7 +13,7 @@
     </span>
   </div>
 </div>
-<table class="table table-sm table-striped">
+<table *ngIf="!isLoading" class="table table-sm table-striped">
   <thead class="thead-dark">
     <tr>
       <th><a (click)="sortBy('id')">ID</a></th>
@@ -31,7 +31,19 @@
       <td>{{ m.rating }}</td>
       <td>{{ m.year }}</td>
       <td>{{ m.director }}</td>
-      <td><a routerLink="/movies/{{m.id}}">Detail</a> | Edit</td>
+      <td>
+        <a routerLink="/movies/detail/{{ m.id }}"
+          ><img src="/assets/details.png" width="20" height="20"
+        /></a>
+        |
+        <a routerLink="/movies/edit/{{ m.id }}"
+          ><img
+            src="/assets/pencil-icon.png"
+            width="20"
+            height="20"
+            title="Edit"
+        /></a>
+      </td>
     </tr>
   </tbody>
 </table>

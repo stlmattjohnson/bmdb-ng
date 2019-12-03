@@ -16,11 +16,15 @@ export class MovieService {
     return this.http.get(this.url) as Observable<JsonResponse>;
   }
 
+  get(id: number): Observable<JsonResponse> {
+    return this.http.get(this.url + id) as Observable<JsonResponse>;
+  }
+
   save(movie: Movie): Observable<JsonResponse> {
     return this.http.post(this.url, movie) as Observable<JsonResponse>;
   }
 
-  detail(movie: Movie): Observable<JsonResponse> {
-    return this.http.get(this.url + movie.id) as Observable<JsonResponse>;
+  delete(id: number): Observable<JsonResponse> {
+    return this.http.delete(this.url + id) as Observable<JsonResponse>;
   }
 }

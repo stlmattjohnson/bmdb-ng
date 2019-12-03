@@ -13,6 +13,7 @@ export class MovieListComponent extends BaseComponent implements OnInit {
   title: string = "Movie List";
   movies: Movie[] = [];
   jr: JsonResponse;
+  isLoading: boolean = true;
   constructor(private movieSvc: MovieService) {
     super();
   }
@@ -21,6 +22,7 @@ export class MovieListComponent extends BaseComponent implements OnInit {
     super.ngOnInit();
     this.movieSvc.list().subscribe(jr => {
       this.movies = jr.data as Movie[];
+      this.isLoading = false;
     });
   }
 }

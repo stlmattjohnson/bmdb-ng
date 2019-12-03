@@ -1,4 +1,18 @@
-<h1>{{ title }}</h1>
+<div class="component-content">
+  <div class="lefthalf">
+    <span class="component-title">{{ title }} </span>
+    <span>
+      <a routerLink="/credits/create">
+        <img
+          id="createnew"
+          width="20"
+          height="20"
+          src="assets/add-icon.png"
+          title="Add New"
+      /></a>
+    </span>
+  </div>
+</div>
 <table class="table table-sm table-striped">
   <thead class="thead-dark">
     <tr>
@@ -10,12 +24,20 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let c of credits | sort:sortCriteria:sortOrder">
+    <tr *ngFor="let c of credits | sort: sortCriteria:sortOrder">
       <td>{{ c.id }}</td>
       <td>{{ c.movie.title }}</td>
       <td>{{ c.actor.firstName + " " + c.actor.lastName }}</td>
       <td>{{ c.role }}</td>
-      <td>Detail | Edit</td>
+      <td>
+        <a routerLink="/credits/detail/{{ c.id }}"
+          ><img src="/assets/details.png" width="20" height="20"
+        /></a>
+        |
+        <a routerLink="/credits/edit/{{ c.id }}"
+          ><img src="/assets/pencil-icon.png" width="20" height="20"
+        /></a>
+      </td>
     </tr>
   </tbody>
 </table>
